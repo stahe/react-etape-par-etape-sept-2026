@@ -1,0 +1,914 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introduction étape par étape au framework web [React]">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/react-etape-par-etape-sept-2026/introduction.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="premiers-pas-avec-react.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>1. Introduction - Introduction étape par étape au framework web [React]</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introduction étape par étape au framework web [React]";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introduction étape par étape au framework web [React]" class="md-header__button md-logo" aria-label="Introduction étape par étape au framework web [React]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introduction étape par étape au framework web [React]
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/react-etape-par-etape-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introduction étape par étape au framework web [React]" class="md-nav__button md-logo" aria-label="Introduction étape par étape au framework web [React]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introduction étape par étape au framework web [React]
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/react-etape-par-etape-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="introduction.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-la-place-de-react-dans-une-application-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. La place de React dans une application web
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-les-outils-utilises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Les outils utilisés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-les-exemples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Les exemples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-contenu-du-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Contenu du document
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="premiers-pas-avec-react.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Premiers pas avec React
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-composants.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Les composants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="le-routage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Le routage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lasynchrone-et-letat-partage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. L'asynchrone et l'état partagé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internationalisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Internationalisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="le-serveur-rdvmedecins-une-boite-noire.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Le serveur RdvMedecins, une boîte noire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dialoguer-avec-le-serveur.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Dialoguer avec le serveur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion-intermediaire.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Conclusion intermédiaire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="etude-de-cas--le-client-react-de-lapplication-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Étude de cas : le client React de l'application RdvMedecins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deploiement.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Déploiement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="annexes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Annexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-introduction">1. <span style="color: #2e74b5">Introduction</span></h1>
+<p>Le PDF du document est <a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQB4apUpxjQSR7EC6G7ZnCgeAVh58v0Rvz-50jckpZ245Gs?e=Fudfsq">ICI</a>.</p>
+<p>Les codes du document sont <a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQASLgjC9Y0mRoI8VYCk_dPbAcVkc8Kua4gjEVLJPV5kgv4?e=ZZYyiG">ICI</a>.</p>
+<p>Ce document est un produit de l&#x27;<strong>IA Claude d&#x27;Anthropic</strong>. Il fait suite au cours <a href="https://stahe.github.io/nestjs-html-sept-2026/">Introduction étape par étape au framework web NestJS</a>, dont il <strong>change le point de vue</strong> :</p>
+<ul>
+<li>dans le cours <em>[NestJS]</em>, c&#x27;est le <strong>serveur</strong> qui fabrique les pages HTML (moteur de vues <em>[Handlebars]</em>) ; le navigateur se contente de les afficher ;</li>
+<li>dans ce cours, les pages sont fabriquées <strong>dans le navigateur</strong>, par une application <em>[React]</em> ; le serveur, devenu un simple serveur JSON, ne fournit plus que des données.</li>
+</ul>
+<p>Les pages de l&#x27;application, elles, ne changent pas : ce sont celles de l&#x27;application <em>[RdvMedecins]</em> déjà présentées avec les autres frameworks (connexion avec captcha, agenda d&#x27;un médecin, fenêtre de réservation, espace du patient, gestion des médecins et des clients, création d&#x27;un compte, français et anglais).</p>
+<p>Le document suit la même progression que ses prédécesseurs : d&#x27;abord de nombreux petits exemples, chacun centré sur une notion de <em>[React]</em>, puis une étude de cas complète, le client <em>[React]</em> de l&#x27;application <em>[RdvMedecins]</em>, dont tous les fichiers sont commentés. Il reprend le plan des cours <a href="https://stahe.github.io/vuejs-etape-par-etape-sept-2026/">Introduction étape par étape au framework Vue.js</a> et <a href="https://stahe.github.io/angular-etape-par-etape-sept-2026/">Introduction étape par étape au framework Angular</a> : le lecteur qui connaît <em>[Vue.js]</em> ou <em>[Angular]</em> retrouvera les mêmes exemples, écrits à la manière de <em>[React]</em> : 25 exemples, numérotés comme ceux du cours <em>[Angular]</em>.</p>
+<p>Un cours existe déjà sur ce sujet : <a href="https://stahe.github.io/react-nestjs-sept-2026/">Un exemple de client / serveur React / NestJS (2026)</a>, qui étudie à la fois le serveur et le client. Le présent document s&#x27;en distingue par sa démarche : le serveur y est une <strong>boîte noire</strong>, dont seule l&#x27;API JSON nous intéresse, et l&#x27;on apprend <em>[React]</em> pas à pas, avant de s&#x27;attaquer au client complet.</p>
+<h2 id="11-la-place-de-react-dans-une-application-web">1.1. <span style="color: #2e74b5">La place de React dans une application web</span></h2>
+<p>L&#x27;application a deux parties, qui ne se parlent que par des requêtes HTTP :</p>
+<p><img src="images/1000000000000AF40000032CB84019F9.png" width="605" height="175" style="width:16cm;height:4.634cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000AF40000032CB84019F9.png" /></p>
+<ul>
+<li>1 : l&#x27;application <em>[React]</em>, exécutée par le navigateur, envoie une requête HTTP au serveur, par exemple <strong><em>[GET /api/agenda?idMedecin=1&amp;jour=2026-10-05]</em></strong> ;</li>
+<li>2 : le serveur répond par des données JSON : l&#x27;agenda de ce médecin, ce jour-là. Il ne fabrique aucune page ;</li>
+<li>3 : avec ces données, <em>[React]</em> met à jour la page affichée, dans le navigateur, sans la recharger.</li>
+</ul>
+<p>Le schéma suivant compare les deux architectures :</p>
+<p><img src="images/100000000000088800000412E999D587.png" width="605" height="289" style="width:16cm;height:7.634cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000088800000412E999D587.png" /></p>
+<p>Le navigateur ne charge qu&#x27;une seule page HTML, presque vide, au démarrage. Tout le reste est fabriqué par du code <em>[JavaScript]</em> : c&#x27;est ce qu&#x27;on appelle une <strong>application à page unique</strong> (SPA, pour <em>[Single Page Application]</em>). Quand l&#x27;utilisateur clique sur un lien interne, aucune page n&#x27;est demandée au serveur : le routeur change l&#x27;adresse affichée et remplace le contenu de la page.</p>
+<p><em>[React]</em> est une bibliothèque créée par <em>[Facebook]</em> (aujourd&#x27;hui <em>[Meta]</em>) et publiée en 2013. C&#x27;est aujourd&#x27;hui la plus utilisée pour écrire des interfaces web. Elle repose sur trois idées :</p>
+<ul>
+<li>les <strong>composants</strong> : l&#x27;interface est découpée en morceaux réutilisables (une barre de navigation, un champ de formulaire, une fenêtre de confirmation...). Un composant <em>[React]</em> est une simple <strong>fonction</strong> <em>[JavaScript]</em> (ou <em>[TypeScript]</em>), qui renvoie ce qu&#x27;il faut afficher, écrit en <strong>JSX</strong>, une syntaxe qui mêle HTML et <em>[JavaScript]</em> ;</li>
+<li>l&#x27;<strong>état</strong> et le <strong>rendu déclaratif</strong> : les données d&#x27;un composant sont rangées dans son <strong>état</strong> (<strong><em>[useState]</em></strong>). Quand l&#x27;état change, <em>[React]</em> rappelle la fonction du composant, compare le résultat au précédent, et met à jour, tout seul, ce qui a changé dans la page. On n&#x27;écrit jamais de code qui modifie directement la page : on décrit la page <strong>en fonction de l&#x27;état</strong> ;</li>
+<li>les <strong>hooks</strong> : des fonctions (<strong><em>[useState]</em></strong>, <strong><em>[useEffect]</em></strong>, <strong><em>[useContext]</em></strong>...) par lesquelles un composant accède aux mécanismes de <em>[React]</em> : l&#x27;état, les effets de bord, les données partagées. On peut écrire ses propres hooks pour réutiliser un comportement.</li>
+</ul>
+<p>À la différence d&#x27;<em>[Angular]</em>, <em>[React]</em> n&#x27;est <strong>pas</strong> un framework « tout compris » : c&#x27;est une bibliothèque d&#x27;affichage. Le routeur, les formulaires, le client HTTP, la traduction, l&#x27;état partagé sont fournis par d&#x27;autres bibliothèques, choisies par le développeur. Ce cours utilise les plus répandues : <em>[React Router]</em> (le routeur), <em>[React Hook Form]</em> (un exemple de bibliothèque de formulaires), <em>[TanStack Query]</em> (la lecture des données du serveur), <em>[Zustand]</em> (l&#x27;état partagé), <em>[i18next]</em> (les langues). L&#x27;outil de construction est <em>[Vite]</em>.</p>
+<p>Nous utiliserons <em>[React]</em> 19, avec son écriture la plus récente : composants fonctions et hooks (les anciens composants écrits sous forme de classes ne sont plus utilisés), actions de formulaire (<strong><em>[useActionState]</em></strong>), <strong><em>[use()]</em></strong> et <strong><em>[&lt;Suspense&gt;]</em></strong>, <strong><em>[&lt;title&gt;]</em></strong> placé par un composant, <strong><em>[useEffectEvent]</em></strong> et <strong><em>[&lt;Activity&gt;]</em></strong> (React 19.2).</p>
+<h2 id="12-les-outils-utilises">1.2. <span style="color: #2e74b5">Les outils utilisés</span></h2>
+<p>Les exemples ont été écrits et testés avec les outils suivants (leur installation est décrite en annexe) :</p>
+<ul>
+<li><em>[Node.js]</em> 24 (ou 22.22 au moins : c&#x27;est l&#x27;exigence de <em>[React Router]</em> 8) et son gestionnaire de paquets <em>[npm]</em> ;</li>
+<li>l&#x27;éditeur <em>[Visual Studio Code]</em>, qui comprend <em>[TypeScript]</em> et le JSX sans extension supplémentaire ;</li>
+<li>un navigateur récent (<em>[Chrome]</em>, <em>[Firefox]</em>, <em>[Edge]</em>), si possible avec l&#x27;extension <em>[React Developer Tools]</em> ;</li>
+<li>l&#x27;outil en ligne de commande <em>[curl]</em>, qui affiche les réponses HTTP brutes ;</li>
+<li>le SGBD <em>[MySQL]</em> (ou <em>[MariaDB]</em>), par exemple celui de <em>[Laragon]</em> sous <em>[Windows]</em> : il est nécessaire au serveur JSON, à partir du chapitre qui le présente.</li>
+</ul>
+<p>Les bibliothèques sont celles des fichiers <em>[package.json]</em> : <em>[React]</em> 19.3, <em>[React Router]</em> 8.4, <em>[Vite]</em> 8.3, <em>[TypeScript]</em> 6.0, <em>[React Hook Form]</em> 7.89, <em>[TanStack Query]</em> 5.104, <em>[Zustand]</em> 5.0, <em>[i18next]</em> 26 et <em>[react-i18next]</em> 17, <em>[Bootstrap]</em> 5.3.</p>
+<h2 id="13-les-exemples">1.3. <span style="color: #2e74b5">Les exemples</span></h2>
+<p>Les codes du document sont rangés dans trois dossiers :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>livrable/
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── exemples-react/            les 25 petits exemples de React
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>├── rdvmedecins-nestjs-json/   le serveur JSON RdvMedecins (la « boîte noire »)
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>└── rdvmedecins-react/         le client React de l'étude de cas
+</code></pre></div></td></tr></table></div>
+<p>Le dossier des exemples contient vingt-cinq petites applications, une par exemple, qui partagent les mêmes bibliothèques :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">exemples</span><span class="o">-</span><span class="n">react</span><span class="o">/</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="err">├──</span><span class="w"> </span><span class="mo">01</span><span class="o">-</span><span class="n">premiere</span><span class="o">-</span><span class="n">application</span><span class="o">/</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">index</span><span class="p">.</span><span class="na">html</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">src</span><span class="o">/</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="err">├──</span><span class="w"> </span><span class="mo">02</span><span class="o">-</span><span class="n">etat</span><span class="o">/</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="err">├──</span><span class="w"> </span><span class="p">...</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="err">├──</span><span class="w"> </span><span class="mi">25</span><span class="o">-</span><span class="n">erreurs</span><span class="o">-</span><span class="n">serveur</span><span class="o">/</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="err">├──</span><span class="w"> </span><span class="n">commun</span><span class="o">/</span><span class="w">            </span><span class="n">du</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">partagé</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">exemples</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="mi">25</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="err">├──</span><span class="w"> </span><span class="n">node_modules</span><span class="o">/</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="err">├──</span><span class="w"> </span><span class="n">package</span><span class="p">.</span><span class="na">json</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="err">├──</span><span class="w"> </span><span class="n">tsconfig</span><span class="p">.</span><span class="na">json</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="err">└──</span><span class="w"> </span><span class="n">vite</span><span class="p">.</span><span class="na">config</span><span class="p">.</span><span class="na">ts</span><span class="w">     </span><span class="n">la</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">Vite</span><span class="p">,</span><span class="w"> </span><span class="n">commune</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">tous</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">exemples</span>
+</code></pre></div></td></tr></table></div>
+<p>On installe les bibliothèques une seule fois, dans une console ouverte sur le dossier <em>[exemples-react]</em> (dans <em>[VS Code]</em> : menu Terminal / Nouveau terminal) :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm install
+</code></pre></div>
+<p>puis on lance un exemple, en donnant son nom :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm start 01-premiere-application
+</code></pre></div>
+<p>Le serveur de développement de <em>[Vite]</em> sert l&#x27;exemple sur le port 5173 : on l&#x27;ouvre à l&#x27;adresse http://localhost:5173/. Ce serveur n&#x27;a pas besoin d&#x27;être relancé quand on modifie un fichier : chaque fichier enregistré est aussitôt recompilé, et la page du navigateur se met à jour d&#x27;elle-même, le plus souvent sans même perdre son état. On l&#x27;arrête par <em>[Ctrl-C]</em> dans la console, avant de lancer l&#x27;exemple suivant (un seul exemple à la fois peut occuper le port 5173).</p>
+<p>Les exemples 22 à 25 interrogent le serveur JSON <em>[RdvMedecins]</em> : il faudra alors l&#x27;avoir installé et lancé, comme expliqué au chapitre qui lui est consacré.</p>
+<h2 id="14-contenu-du-document">1.4. <span style="color: #2e74b5">Contenu du document</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Chapitre</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Contenu</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Exemples</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Premiers pas</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">une application Vite, l&#x27;état, le JSX, les événements, les champs contrôlés, useReducer, la validation, React Hook Form, la mise en forme</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">01 à 09</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Les composants</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">props, fonctions remontées vers le parent, composition (children, render props), cycle de vie et effets, contextes, hooks personnalisés, fenêtre de confirmation</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">10 à 16</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Le routage</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">React Router, les gardes de navigation (middlewares)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">17 et 18</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">L&#x27;asynchrone et l&#x27;état partagé</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">minuteries, anti-rebond, réponses périmées, use() et Suspense, Zustand</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">19 et 20</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Internationalisation</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">une application en français et en anglais (i18next)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">21</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Le serveur, une boîte noire</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">installation du serveur JSON, son API, exemples curl</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Dialoguer avec le serveur</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">fetch, connexion et cookie, actions de formulaire, couche d&#x27;accès à l&#x27;API, TanStack Query, erreurs du serveur</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">22 à 25</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Étude de cas</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">le client React de l&#x27;application RdvMedecins</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Déploiement</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">le client compilé, servi par le serveur JSON</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">-</div></td></tr></table>
+
+<p>Chaque exemple est présenté avec son code complet, commenté ligne par ligne, et une copie d&#x27;écran de son exécution. Les codes sont eux-mêmes abondamment commentés : leurs commentaires font partie du cours.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Ce tutoriel, rédigé par l’IA d’Anthropic <strong>Claude</strong> à la demande de <strong>Serge Tahé</strong>, est mis à la disposition du public selon les termes de la
+        <em>licence Creative Commons Attribution – Pas d’utilisation commerciale –
+        ShareAlike 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
